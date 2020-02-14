@@ -17,10 +17,20 @@ class CreateAdditionalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('color')->nullable();
             $table->string('engine')->nullable();
-            $table->string('fuel')->nullable();
+            $table->unsignedTinyInteger('fuel_id')->nullable();
+            $table->unsignedTinyInteger('driver_unit_id')->nullable();
             $table->string('has_key')->nullable();
-            $table->string('drive_unit')->nullable();
-            $table->text('state');
+            $table->text('state')->nullable();
+
+            $table->foreign('fuel_id')
+                ->references('id')
+                ->on('fuels')
+                ->onDelete('cascade');
+
+            $table->foreign('driver_unit_id')
+                ->references('id')
+                ->on('driver_units')
+                ->onDelete('cascade');
         });
     }
 

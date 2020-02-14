@@ -18,6 +18,11 @@ class CreateImagesTable extends Migration
             $table->unsignedBigInteger('automobile_id');
             $table->string('image');
             $table->timestamp('created_at');
+
+            $table->foreign('automobile_id')
+                ->references('id')
+                ->on('automobiles')
+                ->onDelete('cascade');
         });
     }
 
