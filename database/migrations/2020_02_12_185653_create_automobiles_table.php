@@ -24,8 +24,8 @@ class CreateAutomobilesTable extends Migration
             $table->unsignedTinyInteger('transmission_id');
             $table->unsignedBigInteger('additional_id');
             $table->uuid('VIN');
-            $table->timestamps();
             $table->integer('status');
+            $table->timestamps();
 
             $table->foreign('model_id')
                 ->references('id')
