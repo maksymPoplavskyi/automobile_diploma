@@ -21,27 +21,27 @@ class Automobile extends Model
 
     public function model()
     {
-        return $this->hasOne(Models::class);
+        return $this->hasOne(Models::class, 'id', 'model_id');
     }
 
     public function location()
     {
-        return $this->hasOne(Location::class);
+        return $this->hasOne(Location::class, 'id', 'location_id');
     }
 
     public function damage()
     {
-        return $this->hasOne(Damage::class);
+        return $this->hasOne(Damage::class, 'id', 'damage_id');
     }
 
     public function transmission()
     {
-        return $this->hasOne(Transmission::class);
+        return $this->hasOne(Transmission::class, 'id', 'transmission_id');
     }
 
     public function additional()
     {
-        return $this->hasOne(Additional::class);
+        return $this->hasOne(Additional::class, 'id', 'additional_id');
     }
 
     public function images()

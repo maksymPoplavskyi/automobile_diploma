@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\AutomobileRepository;
 use Illuminate\Http\Request;
 
 class AuctionController extends Controller
 {
-    public function index()
+    public function index(AutomobileRepository $automobileRepository)
     {
-        return view('auction');
+        $automobiles = $automobileRepository->all()->where('status', 0);
+
+        return view('auction', compact('automobiles'));
     }
 }

@@ -33,63 +33,9 @@
                                         <div class="form-group">
                                             <select class="form-control" id="manufacturer_id" name="manufacturer_id">
                                                 <option selected value>Марка авто</option>
-                                                <option value="51">ACURA</option>
-                                                <option value="67">ALFA ROMEO</option>
-                                                <option value="148">ASTON MARTIN</option>
-                                                <option value="42">AUDI</option>
-                                                <option value="77">BENTLEY</option>
-                                                <option value="16">BMW</option>
-                                                <option value="32">BUICK</option>
-                                                <option value="41">CADILLAC</option>
-                                                <option value="29">CHEVROLET</option>
-                                                <option value="34">CHRYSLER</option>
-                                                <option value="375">DAEWOO</option>
-                                                <option value="36">DODGE</option>
-                                                <option value="140">DUCATI</option>
-                                                <option value="68">FERRARI</option>
-                                                <option value="74">FIAT</option>
-                                                <option value="26">FORD</option>
-                                                <option value="166">GENESIS</option>
-                                                <option value="24">GMC</option>
-                                                <option value="27">HARLEY-DAVIDSON</option>
-                                                <option value="15">HONDA</option>
-                                                <option value="56">HUMMER</option>
-                                                <option value="35">HYUNDAI</option>
-                                                <option value="22">INFINITI</option>
-                                                <option value="45">ISUZU</option>
-                                                <option value="72">JAGUAR</option>
-                                                <option value="30">JEEP</option>
-                                                <option value="43">KAWASAKI</option>
-                                                <option value="12">KIA</option>
-                                                <option value="195">LAMBORGHINI</option>
-                                                <option value="52">LAND ROVER</option>
-                                                <option value="40">LEXUS</option>
-                                                <option value="58">LINCOLN</option>
-                                                <option value="230">LOTUS</option>
-                                                <option value="129">MASERATI</option>
-                                                <option value="11">MAZDA</option>
-                                                <option value="563">MCLAREN AUTOMOTIVE</option>
-                                                <option value="25">MERCEDES-BENZ</option>
-                                                <option value="57">MINI</option>
-                                                <option value="28">MITSUBISHI</option>
-                                                <option value="14">NISSAN</option>
-                                                <option value="182">NISSAN DIESEL</option>
-                                                <option value="54">PONTIAC</option>
-                                                <option value="44">PORSCHE</option>
-                                                <option value="39">RAM</option>
-                                                <option value="638">RENAULT</option>
-                                                <option value="163">ROLLS-ROYCE</option>
-                                                <option value="70">SAAB</option>
-                                                <option value="135">SCION</option>
-                                                <option value="78">SMART</option>
-                                                <option value="37">SUBARU</option>
-                                                <option value="53">SUZUKI</option>
-                                                <option value="65">TESLA</option>
-                                                <option value="17">TOYOTA</option>
-                                                <option value="31">VOLKSWAGEN</option>
-                                                <option value="60">VOLVO</option>
-                                                <option value="38">YAMAHA</option>
-                                                <option value="482">ZONGSHEN</option>
+                                                @foreach($brands as $brand)
+                                                    <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -200,7 +146,6 @@
                 <div class="col-12">
                     <select class="select-tabs form-control brands__select">
                         <option value="0"> Легковые</option>
-                        <option value="1"> Внедорожники</option>
 
                     </select>
                     <ul class="nav nav-tabs  brands__list row flex-wrap justify-content-flex-start">
@@ -218,133 +163,15 @@
                     <div class="tab-content clearfix">
                         <div id="PassengerCar" class="tab-pane active">
                             <ul class=" row brands__dropdown row flex-wrap justify-content-around">
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=42"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/audi.png" alt="Audi" class="brands__logo">
-                                        Audi
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=16"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/bmw.png" alt="BMW" class="brands__logo">
-                                        BMW
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=41"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/cadilac.png" alt="cadilac"
-                                             class="brands__logo">
-                                        Cadilac
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=36"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/dodge.png" alt="dodge" class="brands__logo">
-                                        Dodge
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=26"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/ford.png" alt="ford" class="brands__logo">
-                                        Ford
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=35"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/hyndai.png" alt="hyndai" class="brands__logo">
-                                        Hyndai
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=12"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/kia.png" alt="KIA"
-                                             class="brands__logo">
-                                        KIA
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=52"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/land-rover.png" alt="land rover"
-                                             class="brands__logo">
-                                        Land Rover
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=22"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/infinity.png" alt="infinity" class="brands__logo">
-                                        Infinity
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=31"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/volkswagen.png" alt="Volkswagen"
-                                             class="brands__logo">
-                                        Volkswagen
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=14"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/nisan.png" alt="Nisan"
-                                             class="brands__logo">
-                                        Nissan
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=28"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/mitsubishi.png" alt="mitsubishi"
-                                             class="brands__logo">
-                                        Mitsubishi
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=28"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/suzuki.png" alt="suzuki" class="brands__logo">
-                                        Suzuki
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=60"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/volvo.png" alt="volvo" class="brands__logo">
-                                        Volvo
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=11"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/mazda.png" alt="Mazda"
-                                             class="brands__logo">
-                                        Mazda
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension/filter&module_id=36&manufacturer_id=25&category_id=28"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/mercedes_benz.png" alt="Mercedes-Benz"
-                                             class="brands__logo">
-                                        Mercedes-Benz
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=product/category&path=28" class="brands__element--link">
-                                        <img src="/image/brands/logo/all-brands.svg" alt="All Brands"
-                                             class="brands__logo">Все
-                                        марки
-                                    </a>
-                                </li>
+                                @foreach($brands as $brand)
+                                    <li class="brands__element">
+                                        <a href=""
+                                           class="brands__element--link">
+                                            <img src="/image/brands/logo/{{$brand->name}}.png" alt="{{ucfirst($brand->name)}}" class="brands__logo">
+                                            {{ucfirst($brand->name)}}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -731,7 +558,7 @@
         <div class="container">
             <div class="row justify-content-between info__heading">
                 <h2 class="title col-6 col-md-6 col-lg-5">Полезная информация</h2>
-                <a href="/index.php?route=blog/latest" class="all-link col-6 col-md-3 col-lg-3">Смотреть все <span
+                <a href="{{route('blog')}}" class="all-link col-6 col-md-3 col-lg-3">Смотреть все <span
                         class="all-link__arrow">&#8594;</span></a>
             </div>
             <div class="row">
@@ -756,16 +583,9 @@
 
                                 <div class="col-12 col-lg-7">
                                 <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Как подобрать автомобиль из Америки?</span>
-                                    <p class="info__text">Самостоятельно приобрести автомобиль в Соединённых Штатах
-                                        вполне
-                                        возможно. Но есть огромные риски попасть на мошенников или получить авто с
-                                        серьезными повреждениями. Кроме того, сам поиск, оформление машины, организация
-                                        ее
-                                        доставки содержит много разных нюансов. Чтобы разобраться во всем этом –
-                                        придется
-                                        потратить много времени, энергии.</p>
+                                                              class="info__calendar">{{$article->updated_at}}</span>
+                                    <span class="info__name">{{$article->title}}</span>
+                                    <p class="info__text">{{$article->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=126" class="info__link">Читать
                                         далее
                                         <img src="/image/brands/logo/all-brands.svg"
@@ -778,13 +598,9 @@
                             <div class="row info__element">
                                 <div class="col-12 col-lg-7 info__inner">
                                 <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Какие документы нужны для растаможки авто из США?</span>
-                                    <p class="info__text">Если вы решили приобрести автомобиль в Соединенных Штатах или
-                                        Канаде, вам необходимо будет после его покупки пройти этап таможенного
-                                        оформления.
-                                        Мы полностью берём на себя работу с бумагами, чтобы вы не тратили личное время,
-                                        занимаясь скучными процессами.</p>
+                                                              class="info__calendar">{{$new->updated_at}}</span>
+                                    <span class="info__name">{{$new->title}}</span>
+                                    <p class="info__text">{{$new->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=127" class="info__link">Читать
                                         далее
                                         <img src="/image/brands/logo/all-brands.svg"
@@ -805,13 +621,9 @@
                                 </div>
                                 <div class="col-12 col-lg-7">
                                 <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Как сэкономить, покупая авто в США?</span>
-                                    <p class="info__text">В Украине с каждым днём появляется все больше американских
-                                        автомобилей. Это связано с тем, что общая стоимость машины, доставленной из-за
-                                        океана, бывает на 30%, а то и 50% дешевле аналогичной модели в нашей стране.
-                                        Даже с
-                                        учётом всех сопутствующих затрат.</p>
+                                                              class="info__calendar">{{$review->updated_at}}</span>
+                                    <span class="info__name">{{$review->title}}</span>
+                                    <p class="info__text">{{$review->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=128" class="info__link">Читать
                                         далее<img src="/image/brands/logo/all-brands.svg"
                                                   alt="All Brands"
@@ -823,15 +635,9 @@
                             <div class="row info__element">
                                 <div class=" col-12 col-lg-7 info__inner">
                                 <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Как сертифицировать автомобиль из Америки в Украине?</span>
-                                    <p class="info__text">Прежде, чем заграничное транспортное средство попадет на
-                                        дороги
-                                        Украины, его владелец должен обязательно пройти сертификацию в соответствующих
-                                        органах. Зачем это делается? В нашей стране действуют европейские требования к
-                                        безопасности и условиям эксплуатации автомобиля, которые отличаются от
-                                        аналогичных
-                                        американских норм.</p>
+                                                              class="info__calendar">{{$helper->updated_at}}</span>
+                                    <span class="info__name">{{$helper->title}}</span>
+                                    <p class="info__text">{{$helper->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=129" class="info__link">Читать
                                         далее
                                         <img src="/image/brands/logo/all-brands.svg"
@@ -849,7 +655,6 @@
             </div>
         </div>
     </section>
-
 
     <div id="common-home" class="container-fluid">
         <div class="row">

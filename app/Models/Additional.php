@@ -14,7 +14,13 @@ class Additional extends Model
 
     protected $fillable = ['color', 'engine', 'fuel_id', 'has_key', 'driver_unit_id', 'state'];
 
-    public function fuel() {
+    public function fuel()
+    {
         return $this->hasOne(Fuel::class, 'id', 'fuel_id');
+    }
+
+    public function driver_unit()
+    {
+        return $this->hasOne(Driver_unit::class, 'id', 'driver_unit_id');
     }
 }

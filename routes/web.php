@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AuctionController;
+use App\Http\Controllers\AutomobileController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DesignationsController;
@@ -29,3 +30,5 @@ Route::get('/in-stock', [InStockController::class, 'index'])->name('in-stock');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/designations', [DesignationsController::class, 'index'])->name('designations');
+
+Route::get('/automobile/{id}', [AutomobileController::class, 'index'])->name('automobile');

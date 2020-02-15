@@ -13,4 +13,14 @@ class Models extends Model
     public $timestamps = false;
 
     protected $fillable = ['name'];
+
+    public function automobile()
+    {
+        return $this->belongsTo(Automobile::class);
+    }
+
+    public function brand()
+    {
+        return $this->hasOne(Brand::class, 'id', 'brand_id');
+    }
 }

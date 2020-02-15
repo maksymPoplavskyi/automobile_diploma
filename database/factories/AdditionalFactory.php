@@ -12,7 +12,8 @@ $factory->define(Additional::class, function (Faker $faker) {
 
     return array(
         'color' => $faker->colorName,
-        'engine' => $faker->randomFloat('1', '1', '7') . 'L ' . $faker->randomElement(array('4', '6', '12')),
+        'engine' => $faker->randomFloat('1', '1', '7') . 'L ',
+        'count_of_cylinders' => $faker->randomElement(array('4', '6', '12')),
         'fuel_id' => function () {
             return \factory(Fuel::class)->make()->id;
         },
