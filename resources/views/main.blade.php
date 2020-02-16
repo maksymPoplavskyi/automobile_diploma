@@ -13,10 +13,11 @@
                     <h1 class="title_home_header">АВТО ИЗ США ПОД КЛЮЧ С ЭКОНОМИЕЙ ДО 50%</h1>
                 </div>
                 <div class="col-12 col-sm-6">
-                    <form id="main_page_search" method="get" action="/index.php" class="auction">
-                        <input type="hidden" name="route" value="extension/filter">
-                        <input type="hidden" name="module_id" value="36">
-                        <input type="hidden" name="category_id" value="28">
+                    <form id="main_page_search" method="post" action="{{route('auction.search')}}" class="auction">
+                        @csrf
+{{--                        <input type="hidden" name="route" value="extension/filter">--}}
+{{--                        <input type="hidden" name="module_id" value="36">--}}
+{{--                        <input type="hidden" name="category_id" value="28">--}}
 
                         <div class="col-12 auction__wrap">
                             <div class="row auction__heading">
@@ -31,65 +32,11 @@
                                     <div class="dropdown col-12 col-lg-6 auction__list">
 
                                         <div class="form-group">
-                                            <select class="form-control" id="manufacturer_id" name="manufacturer_id">
-                                                <option selected value>Марка авто</option>
-                                                <option value="51">ACURA</option>
-                                                <option value="67">ALFA ROMEO</option>
-                                                <option value="148">ASTON MARTIN</option>
-                                                <option value="42">AUDI</option>
-                                                <option value="77">BENTLEY</option>
-                                                <option value="16">BMW</option>
-                                                <option value="32">BUICK</option>
-                                                <option value="41">CADILLAC</option>
-                                                <option value="29">CHEVROLET</option>
-                                                <option value="34">CHRYSLER</option>
-                                                <option value="375">DAEWOO</option>
-                                                <option value="36">DODGE</option>
-                                                <option value="140">DUCATI</option>
-                                                <option value="68">FERRARI</option>
-                                                <option value="74">FIAT</option>
-                                                <option value="26">FORD</option>
-                                                <option value="166">GENESIS</option>
-                                                <option value="24">GMC</option>
-                                                <option value="27">HARLEY-DAVIDSON</option>
-                                                <option value="15">HONDA</option>
-                                                <option value="56">HUMMER</option>
-                                                <option value="35">HYUNDAI</option>
-                                                <option value="22">INFINITI</option>
-                                                <option value="45">ISUZU</option>
-                                                <option value="72">JAGUAR</option>
-                                                <option value="30">JEEP</option>
-                                                <option value="43">KAWASAKI</option>
-                                                <option value="12">KIA</option>
-                                                <option value="195">LAMBORGHINI</option>
-                                                <option value="52">LAND ROVER</option>
-                                                <option value="40">LEXUS</option>
-                                                <option value="58">LINCOLN</option>
-                                                <option value="230">LOTUS</option>
-                                                <option value="129">MASERATI</option>
-                                                <option value="11">MAZDA</option>
-                                                <option value="563">MCLAREN AUTOMOTIVE</option>
-                                                <option value="25">MERCEDES-BENZ</option>
-                                                <option value="57">MINI</option>
-                                                <option value="28">MITSUBISHI</option>
-                                                <option value="14">NISSAN</option>
-                                                <option value="182">NISSAN DIESEL</option>
-                                                <option value="54">PONTIAC</option>
-                                                <option value="44">PORSCHE</option>
-                                                <option value="39">RAM</option>
-                                                <option value="638">RENAULT</option>
-                                                <option value="163">ROLLS-ROYCE</option>
-                                                <option value="70">SAAB</option>
-                                                <option value="135">SCION</option>
-                                                <option value="78">SMART</option>
-                                                <option value="37">SUBARU</option>
-                                                <option value="53">SUZUKI</option>
-                                                <option value="65">TESLA</option>
-                                                <option value="17">TOYOTA</option>
-                                                <option value="31">VOLKSWAGEN</option>
-                                                <option value="60">VOLVO</option>
-                                                <option value="38">YAMAHA</option>
-                                                <option value="482">ZONGSHEN</option>
+                                            <select class="form-control" id="manufacturer_id" name="brand_id">
+                                                <option selected value disabled>Марка авто</option>
+                                                @foreach($brands as $brand)
+                                                    <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -97,7 +44,7 @@
                                     <div class="dropdown col-12 col-lg-6 auction__list">
 
                                         <div class="form-group">
-                                            <select class="form-control" id="models" name="attribute[9999999]">
+                                            <select class="form-control" id="models" name="model_id">
                                                 <option disabled selected value>Модель</option>
                                             </select>
                                         </div>
@@ -130,7 +77,7 @@
                                     <div class="dropdown col-12 col-lg-6 auction__list">
 
                                         <div class="form-group">
-                                            <input type="hidden" id="years" name="attribute[27]" value>
+                                            <input type="hidden" id="years" name="years" value>
                                             <select class="form-control" id="year_to">
                                                 <option disabled selected value>до года</option>
                                                 <option value="2020">2020</option>
@@ -200,7 +147,6 @@
                 <div class="col-12">
                     <select class="select-tabs form-control brands__select">
                         <option value="0"> Легковые</option>
-                        <option value="1"> Внедорожники</option>
 
                     </select>
                     <ul class="nav nav-tabs  brands__list row flex-wrap justify-content-flex-start">
@@ -218,133 +164,16 @@
                     <div class="tab-content clearfix">
                         <div id="PassengerCar" class="tab-pane active">
                             <ul class=" row brands__dropdown row flex-wrap justify-content-around">
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=42"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/audi.png" alt="Audi" class="brands__logo">
-                                        Audi
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=16"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/bmw.png" alt="BMW" class="brands__logo">
-                                        BMW
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=41"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/cadilac.png" alt="cadilac"
-                                             class="brands__logo">
-                                        Cadilac
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=36"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/dodge.png" alt="dodge" class="brands__logo">
-                                        Dodge
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=26"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/ford.png" alt="ford" class="brands__logo">
-                                        Ford
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=35"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/hyndai.png" alt="hyndai" class="brands__logo">
-                                        Hyndai
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=12"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/kia.png" alt="KIA"
-                                             class="brands__logo">
-                                        KIA
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=52"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/land-rover.png" alt="land rover"
-                                             class="brands__logo">
-                                        Land Rover
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=22"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/infinity.png" alt="infinity" class="brands__logo">
-                                        Infinity
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=31"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/volkswagen.png" alt="Volkswagen"
-                                             class="brands__logo">
-                                        Volkswagen
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=14"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/nisan.png" alt="Nisan"
-                                             class="brands__logo">
-                                        Nissan
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=28"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/mitsubishi.png" alt="mitsubishi"
-                                             class="brands__logo">
-                                        Mitsubishi
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=28"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/suzuki.png" alt="suzuki" class="brands__logo">
-                                        Suzuki
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=60"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/volvo.png" alt="volvo" class="brands__logo">
-                                        Volvo
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension%2Ffilter&module_id=36&category_id=28&manufacturer_id=11"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/mazda.png" alt="Mazda"
-                                             class="brands__logo">
-                                        Mazda
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=extension/filter&module_id=36&manufacturer_id=25&category_id=28"
-                                       class="brands__element--link">
-                                        <img src="/image/brands/logo/mercedes_benz.png" alt="Mercedes-Benz"
-                                             class="brands__logo">
-                                        Mercedes-Benz
-                                    </a>
-                                </li>
-                                <li class="brands__element">
-                                    <a href="/index.php?route=product/category&path=28" class="brands__element--link">
-                                        <img src="/image/brands/logo/all-brands.svg" alt="All Brands"
-                                             class="brands__logo">Все
-                                        марки
-                                    </a>
-                                </li>
+                                @foreach($brands as $brand)
+                                    <li class="brands__element">
+                                        <a href=""
+                                           class="brands__element--link">
+                                            <img src="https://www.americaro.com.ua/image/brands/logo/{{$brand->name}}.png"
+                                                 alt="{{ucfirst($brand->name)}}" class="brands__logo">
+                                            {{ucfirst($brand->name)}}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -358,308 +187,60 @@
         <div class="container">
             <div class="row justify-content-between new__heading">
                 <h2 class="title col-6 col-md-3 col-lg-2">Новинки</h2>
-                <a href="/index.php?route=product/category&path=28" class="all-link col-6 col-md-3 col-lg-3">Смотреть
+                <a href="{{route('auction')}}" class="all-link col-6 col-md-3 col-lg-3">Смотреть
                     все
                     <span
                         class="all-link__arrow">&#8594;</span></a>
             </div>
             <div id="carousel-example" class="carousel slide " data-ride="carousel">
                 <div class="carousel-inner row w-100  new__slider" role="listbox">
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32512"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX235/8df21f14-cecd-48b8-abe4-e78461bbf50a.JPG"
-                                    alt="FORD F150 SUPER" title="FORD F150 SUPER" class="image new__image"></a>
-                            <span class="new__name">FORD F150 SUPER</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>80883 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1FTEW1EF6GFA23104</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
+                    @foreach($newAutomobiles as $newAutomobile)
+                        <div class="item carousel-item new__element">
+                            <div class="new__element--item">
+                                <a href="{{route('automobile', $newAutomobile->id)}}"><img
+                                        src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX235/8df21f14-cecd-48b8-abe4-e78461bbf50a.JPG"
+                                        alt="FORD F150 SUPER" title="FORD F150 SUPER" class="image new__image"></a>
+                                <span
+                                    class="new__name">{{$newAutomobile->model->brand->name}} {{$newAutomobile->model->name}}</span>
+                                <div class="row ">
+                                    <ul class="new__list col-4">
+                                        <li>Пробег:</li>
+                                        <li>Урон:</li>
+                                        <li>VIN:</li>
+                                    </ul>
+                                    <ul class="new__values col-8">
+                                        <li>{{$newAutomobile->mileage}}</li>
+                                        <li>{{$newAutomobile->damage->name}}</li>
+                                        <li>{{$newAutomobile->VIN}}</li>
+                                    </ul>
+                                </div>
+                                <p class=" new__rate new__rate--current">Текущая ставка:<span
+                                        class="new__rate--price">{{$newAutomobile->current_rate}} $</span>
+                                </p>
+                                <button class="btn new__rate new__rate--recommended">Осталось <span
+                                        class="new__rate--price"> < 1 ч.</span></button>
 
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32512"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32257"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX159/77923f13-b1fa-4c1c-8756-41ed819069ad.JPG"
-                                    alt="FORD FOCUS SE" title="FORD FOCUS SE" class="image new__image"></a>
-                            <span class="new__name">FORD FOCUS SE</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>114706 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1FAHP3F29CL170150</li>
-                                </ul>
+                                <a href="{{route('automobile', $newAutomobile->id)}}"
+                                   class="new__more">Смотреть</a>
                             </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32257"
-                               class="new__more">Смотреть</a>
                         </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32513"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX234/bc581dc1-89ab-4e1b-9406-1ff6b2fb7038.JPG"
-                                    alt="DODGE CALIBER SX" title="DODGE CALIBER SX" class="image new__image"></a>
-                            <span class="new__name">DODGE CALIBER SX</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>148923 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1B3CB4HA8AD661296</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32513"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32514"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX235/f15c677a-ea30-41fa-80fc-5fcf181fd31a.JPG"
-                                    alt="BUICK ENCLAVE CX" title="BUICK ENCLAVE CX" class="image new__image"></a>
-                            <span class="new__name">BUICK ENCLAVE CX</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>0 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>5GAKVCED7BJ128189</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32514"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32259"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX184/1ef29d0b-887f-419e-8d89-b7e086c9d046.JPG"
-                                    alt="VOLKSWAGEN JETTA WOLF" title="VOLKSWAGEN JETTA WOLF" class="image new__image"></a>
-                            <span class="new__name">VOLKSWAGEN JETTA WOLF</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>90981 &#160;</li>
-                                    <li>UNDERCARRIAGE&#160;</li>
-                                    <li>3VWRJ7AJ8AM022392</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32259"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32260"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX186/d3e456cc-373e-47a0-8af5-053b69d218c7.JPG"
-                                    alt="DODGE DART SXT" title="DODGE DART SXT" class="image new__image"></a>
-                            <span class="new__name">DODGE DART SXT</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>126050 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1C3CDFBA9DD142814</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32260"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32261"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX189/4d73a0ef-39b2-4a3b-b353-beaa70b9bb76.JPG"
-                                    alt="HARLEY-DAVIDSON FLHXSE CVO" title="HARLEY-DAVIDSON FLHXSE CVO"
-                                    class="image new__image"></a>
-                            <span class="new__name">HARLEY-DAVIDSON FLHXSE CVO</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>0 &#160;</li>
-                                    <li>ALL OVER&#160;</li>
-                                    <li>1HD1PXN16FB964348</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32261"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32263"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX191/0b5c5b86-f944-4444-81a6-d6abe7229d30.JPG"
-                                    alt="GMC TERRAIN SL" title="GMC TERRAIN SL" class="image new__image"></a>
-                            <span class="new__name">GMC TERRAIN SL</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>71449 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>2GKALREK1F6407629</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32263"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32265"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX193/df7e8f32-aa3c-4e4d-a954-aa4f7b8b865a.JPG"
-                                    alt="CHEVROLET CRUZE LT" title="CHEVROLET CRUZE LT" class="image new__image"></a>
-                            <span class="new__name">CHEVROLET CRUZE LT</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>51878 &#160;</li>
-                                    <li>REAR END&#160;</li>
-                                    <li>1G1PC5SB1E7439782</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32265"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32273"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX199/5b993f34-254e-4a13-a104-5a323e62c65a.JPG"
-                                    alt="FORD FUSION SEL" title="FORD FUSION SEL" class="image new__image"></a>
-                            <span class="new__name">FORD FUSION SEL</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>119260 &#160;</li>
-                                    <li>REAR END&#160;</li>
-                                    <li>3FAHP0JG5CR320788</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 3 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=32273"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <a class="right carousel-control carousel-control-prev new__prev" href="#carousel-example" role="button"
-                   data-slide="prev">
-                    <span class="carousel-control-prev-icon new__prev--icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control carousel-control-next new__next" href="#carousel-example" role="button"
-                   data-slide="next">
-                    <span class="carousel-control-next-icon new__next--icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-
-
             </div>
+
+            <a class="right carousel-control carousel-control-prev new__prev" href="#carousel-example" role="button"
+               data-slide="prev">
+                <span class="carousel-control-prev-icon new__prev--icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control carousel-control-next new__next" href="#carousel-example" role="button"
+               data-slide="next">
+                <span class="carousel-control-next-icon new__next--icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+
+        </div>
 
         </div>
     </section>
@@ -676,7 +257,7 @@
                 <div class="purchase__element purchase__element--one">
                     <div class=" purchase__item purchase__item--white purchase__line">
                         <div class="purchase__picture purchase__picture--yellow">
-                            <img src="catalog/view/theme/default/image/americaro/registration.svg" alt="registration">
+                            <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/registration.svg" alt="registration">
                         </div>
                         <div class="purchase__info">
                         <span class="purchase__name">1.
@@ -688,7 +269,7 @@
                 <div class="purchase__element purchase__element--two ">
                     <div class=" purchase__item purchase__item--yellow purchase__element--center">
                         <div class="purchase__picture purchase__picture--white purchase__picture--inner">
-                            <img src="catalog/view/theme/default/image/americaro/purchase.svg" alt="purchase">
+                            <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/purchase.svg" alt="purchase">
                         </div>
                         <div class="purchase__info">
                         <span class="purchase__name">2.
@@ -700,7 +281,7 @@
                 <div class="purchase__element purchase__element--three">
                     <div class=" purchase__item purchase__item--white purchase__element--center">
                         <div class="purchase__picture purchase__picture--yellow">
-                            <img src="catalog/view/theme/default/image/americaro/delivery.svg" alt="delivery">
+                            <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/delivery.svg" alt="delivery">
                         </div>
                         <div class="purchase__info">
                         <span class="purchase__name">3.
@@ -712,7 +293,7 @@
                 <div class="purchase__element purchase__element--fo">
                     <div class=" purchase__item purchase__item--yellow">
                         <div class="purchase__picture purchase__picture--white">
-                            <img src="catalog/view/theme/default/image/americaro/rate.png" alt="rate">
+                            <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/rate.png" alt="rate">
                         </div>
                         <div class="purchase__info">
                         <span class="purchase__name">4.
@@ -731,7 +312,7 @@
         <div class="container">
             <div class="row justify-content-between info__heading">
                 <h2 class="title col-6 col-md-6 col-lg-5">Полезная информация</h2>
-                <a href="/index.php?route=blog/latest" class="all-link col-6 col-md-3 col-lg-3">Смотреть все <span
+                <a href="{{route('blog')}}" class="all-link col-6 col-md-3 col-lg-3">Смотреть все <span
                         class="all-link__arrow">&#8594;</span></a>
             </div>
             <div class="row">
@@ -751,24 +332,17 @@
                         <div class="tab-pane active" id="article1">
                             <div class="row info__element">
                                 <div class="col-12 col-lg-5 info__inner">
-                                    <img src="/image/catalog/car-docs-3-1024x683.jpg" alt="Car" class="image">
+                                    <img src="https://www.americaro.com.ua/image/catalog/car-docs-3-1024x683.jpg" alt="Car" class="image">
                                 </div>
 
                                 <div class="col-12 col-lg-7">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Как подобрать автомобиль из Америки?</span>
-                                    <p class="info__text">Самостоятельно приобрести автомобиль в Соединённых Штатах
-                                        вполне
-                                        возможно. Но есть огромные риски попасть на мошенников или получить авто с
-                                        серьезными повреждениями. Кроме того, сам поиск, оформление машины, организация
-                                        ее
-                                        доставки содержит много разных нюансов. Чтобы разобраться во всем этом –
-                                        придется
-                                        потратить много времени, энергии.</p>
+                                <span class="info__data"><img src="https:///brands/calendar.svg" alt="Calendar"
+                                                              class="info__calendar">{{$article->updated_at}}</span>
+                                    <span class="info__name">{{$article->title}}</span>
+                                    <p class="info__text">{{$article->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=126" class="info__link">Читать
                                         далее
-                                        <img src="/image/brands/logo/all-brands.svg"
+                                        <img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                              alt="All Brands"
                                              class="info__arrow"></a>
                                 </div>
@@ -777,22 +351,18 @@
                         <div class="tab-pane" id="article2">
                             <div class="row info__element">
                                 <div class="col-12 col-lg-7 info__inner">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Какие документы нужны для растаможки авто из США?</span>
-                                    <p class="info__text">Если вы решили приобрести автомобиль в Соединенных Штатах или
-                                        Канаде, вам необходимо будет после его покупки пройти этап таможенного
-                                        оформления.
-                                        Мы полностью берём на себя работу с бумагами, чтобы вы не тратили личное время,
-                                        занимаясь скучными процессами.</p>
+                                <span class="info__data"><img src="https://www.americaro.com.ua/image/brands/calendar.svg" alt="Calendar"
+                                                              class="info__calendar">{{$new->updated_at}}</span>
+                                    <span class="info__name">{{$new->title}}</span>
+                                    <p class="info__text">{{$new->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=127" class="info__link">Читать
                                         далее
-                                        <img src="/image/brands/logo/all-brands.svg"
+                                        <img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                              alt="All Brands"
                                              class="info__arrow"></a>
                                 </div>
                                 <div class="col-12 col-lg-5">
-                                    <img src="/image/cache/catalog/car-cheking-1024x692-1024x691-430x270.jpg" alt="Car"
+                                    <img src="https://www.americaro.com.ua/image/cache/catalog/car-cheking-1024x692-1024x691-430x270.jpg" alt="Car"
                                          class=" image">
                                 </div>
                             </div>
@@ -800,20 +370,16 @@
                         <div class="tab-pane" id="article3">
                             <div class="row info__element">
                                 <div class="col-12 col-lg-5 info__inner">
-                                    <img src="/image/catalog/american-cars-1024x683-1024x682.jpg" alt="Car"
+                                    <img src="https://www.americaro.com.ua/image/catalog/american-cars-1024x683-1024x682.jpg" alt="Car"
                                          class="  image">
                                 </div>
                                 <div class="col-12 col-lg-7">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Как сэкономить, покупая авто в США?</span>
-                                    <p class="info__text">В Украине с каждым днём появляется все больше американских
-                                        автомобилей. Это связано с тем, что общая стоимость машины, доставленной из-за
-                                        океана, бывает на 30%, а то и 50% дешевле аналогичной модели в нашей стране.
-                                        Даже с
-                                        учётом всех сопутствующих затрат.</p>
+                                <span class="info__data"><img src="https://www.americaro.com.ua/image/brands/calendar.svg" alt="Calendar"
+                                                              class="info__calendar">{{$review->updated_at}}</span>
+                                    <span class="info__name">{{$review->title}}</span>
+                                    <p class="info__text">{{$review->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=128" class="info__link">Читать
-                                        далее<img src="/image/brands/logo/all-brands.svg"
+                                        далее<img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                                   alt="All Brands"
                                                   class="info__arrow"></a>
                                 </div>
@@ -822,24 +388,18 @@
                         <div class="tab-pane" id="article4">
                             <div class="row info__element">
                                 <div class=" col-12 col-lg-7 info__inner">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
-                                                              class="info__calendar">13.12.2019</span>
-                                    <span class="info__name">Как сертифицировать автомобиль из Америки в Украине?</span>
-                                    <p class="info__text">Прежде, чем заграничное транспортное средство попадет на
-                                        дороги
-                                        Украины, его владелец должен обязательно пройти сертификацию в соответствующих
-                                        органах. Зачем это делается? В нашей стране действуют европейские требования к
-                                        безопасности и условиям эксплуатации автомобиля, которые отличаются от
-                                        аналогичных
-                                        американских норм.</p>
+                                <span class="info__data"><img src="https://www.americaro.com.ua/image/brands/calendar.svg" alt="Calendar"
+                                                              class="info__calendar">{{$helper->updated_at}}</span>
+                                    <span class="info__name">{{$helper->title}}</span>
+                                    <p class="info__text">{{$helper->text}}</p>
                                     <a href="/index.php?route=blog/article&article_id=129" class="info__link">Читать
                                         далее
-                                        <img src="/image/brands/logo/all-brands.svg"
+                                        <img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                              alt="All Brands"
                                              class="info__arrow"></a>
                                 </div>
                                 <div class="col-12 col-lg-5 ">
-                                    <img src="/image/catalog/itachki-sertyficat-1024x722-1024x722.jpg" alt="Car"
+                                    <img src="https://www.americaro.com.ua/image/catalog/itachki-sertyficat-1024x722-1024x722.jpg" alt="Car"
                                          class="  image">
                                 </div>
                             </div>
@@ -849,7 +409,6 @@
             </div>
         </div>
     </section>
-
 
     <div id="common-home" class="container-fluid">
         <div class="row">

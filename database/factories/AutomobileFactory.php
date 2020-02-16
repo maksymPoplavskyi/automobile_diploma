@@ -18,7 +18,7 @@ $factory->define(Automobile::class, function (Faker $faker) {
         'model_id' => function () {
             return \factory(Models::class)->make()->id;
         },
-        'year' => $faker->year,
+        'year' => $faker->numberBetween(2010, 2020),
         'mileage' => $faker->numberBetween(0, 222222),
         'location_id' => function () {
             return \factory(Location::class)->make()->id;

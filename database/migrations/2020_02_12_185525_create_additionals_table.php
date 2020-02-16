@@ -17,6 +17,7 @@ class CreateAdditionalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('color')->nullable();
             $table->string('engine')->nullable();
+            $table->integer('count_of_cylinders')->nullable();
             $table->unsignedTinyInteger('fuel_id')->nullable();
             $table->unsignedTinyInteger('driver_unit_id')->nullable();
             $table->string('has_key')->nullable();
