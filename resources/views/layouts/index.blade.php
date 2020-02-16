@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title')</title>
-    <base href="https://www.americaro.com.ua/"/>
+    {{--    <base href="https://www.americaro.com.ua/"/>--}}
     <meta name="description"
           content="Americaro - первый онлайн аукцион в Украине, который предлагает доставку автомобилей из США по самым низким тарифам и точным тарифам! "/>
     <meta name="keywords"
@@ -23,16 +23,22 @@
     <meta property="og:url" content="https://www.americaro.com.ua/index.php?route=common/home"/>
     <meta property="og:image" content="https://www.americaro.com.ua/image/catalog/logo-americaro.png"/>
     <meta property="og:site_name" content="Americaro авто из США под заказ"/>
-    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <link href="catalog/view/theme/default/stylesheet/bootstrap.min.css" rel="stylesheet" media="screen"/>
-    <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://www.americaro.com.ua/catalog/view/javascript/jquery/jquery-2.1.1.min.js"
+            type="text/javascript"></script>
+    <link href="https://www.americaro.com.ua/catalog/view/theme/default/stylesheet/bootstrap.min.css" rel="stylesheet"
+          media="screen"/>
+    <script src="https://www.americaro.com.ua/catalog/view/javascript/bootstrap/js/bootstrap.min.js"
+            type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
-    <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="catalog/view/theme/default/stylesheet/reset.css" rel="stylesheet" media="screen"/>
-    <link href="catalog/view/theme/default/stylesheet/style_americaro.css" rel="stylesheet">
-    <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
-    <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+    <link href="https://www.americaro.com.ua/catalog/view/javascript/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://www.americaro.com.ua/catalog/view/theme/default/stylesheet/reset.css" rel="stylesheet"
+          media="screen"/>
+    <link href="https://www.americaro.com.ua/catalog/view/theme/default/stylesheet/style_americaro.css"
+          rel="stylesheet">
+    <link href="https://www.americaro.com.ua/catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+    <script src="https://www.americaro.com.ua/catalog/view/javascript/common.js" type="text/javascript"></script>
     <link href="https://www.americaro.com.ua/image/catalog/favicon-americaro.png" rel="icon"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -96,7 +102,7 @@
                 </div>
             </nav>
             <a href="tel:073-404-30-44" class="header__phone col-8 col-md-5  col-lg-3">
-                <img src="catalog/view/theme/default/image/americaro/phone.png" alt="phone"
+                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/phone.png" alt="phone"
                      class="header__phone--image">
                 <span class="header__phone--text" style="font-size: 28px">8-800-555-35-35</span>
             </a>
@@ -109,7 +115,22 @@
 <g>
     <path
         d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803   c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654   c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246   c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"></path>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+</g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
 </svg>
                 </a>
                 <a href="https://www.instagram.com/americaro.company/" target="_blank">
@@ -125,7 +146,22 @@
         d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561   C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561   c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z"></path>
     <path
         d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78   c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78   C135.661,29.421,132.821,28.251,129.921,28.251z"></path>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g><g></g><g></g><g></g><g></g><g></g>
+</g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
 </svg>
                 </a>
             </div>
@@ -140,15 +176,21 @@
     <div class="container">
         <div class="row justify-content-around">
             <div class="advantages__element row">
-                <img src="catalog/view/theme/default/image/americaro/delivery-car.svg" alt="Delivery" class="advantages__image">
+                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/delivery-car.svg"
+                     alt="Delivery"
+                     class="advantages__image">
                 <h3 class="advantages__name">Надежная доставка</h3>
             </div>
             <div class="advantages__element row">
-                <img src="catalog/view/theme/default/image/americaro/choice-car.svg" alt="Choice Car" class="advantages__image">
+                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/choice-car.svg"
+                     alt="Choice Car"
+                     class="advantages__image">
                 <h3 class="advantages__name">Большой выбор авто</h3>
             </div>
             <div class="advantages__element row">
-                <img src="catalog/view/theme/default/image/americaro/guarantee.svg" alt="Guarantee" class="advantages__image">
+                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/guarantee.svg"
+                     alt="Guarantee"
+                     class="advantages__image">
                 <h3 class="advantages__name">Гарантия качества</h3>
             </div>
         </div>
@@ -185,10 +227,12 @@
             <div class="col-12 col-md-4 col-lg-3 footer__guarantee">
                 <span class="footer__text">Гарантия безопасности</span>
                 <div class="row footer__card">
-                    <a href="#" class="footer__visa"><img src="catalog/view/theme/default/image/americaro/visa.jpg"
-                                                          alt="visa"></a>
-                    <a href="#"><img src="catalog/view/theme/default/image/americaro/mastercard.jpg"
-                                     alt="mastercard"></a>
+                    <a href="#" class="footer__visa"><img
+                            src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/visa.jpg"
+                            alt="visa"></a>
+                    <a href="#"><img
+                            src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/mastercard.jpg"
+                            alt="mastercard"></a>
                 </div>
             </div>
         </div>
@@ -205,7 +249,22 @@
 <g>
     <path
         d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803   c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654   c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246   c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"></path>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+</g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
 </svg>
                 </a>
                 <a href="https://www.instagram.com/americaro.company/" target="_blank">
@@ -220,7 +279,22 @@
         d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561   C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561   c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z"></path>
     <path
         d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78   c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78   C135.661,29.421,132.821,28.251,129.921,28.251z"></path>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+</g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
 </svg>
                 </a>
             </div>
@@ -391,6 +465,37 @@
         $("#upForm .submit").on('click', function () {
             // $("#upForm").submit();
         });
+
+        (function () {
+
+            $('#manufacturer_id').on('change', function () {
+                var brand_id = $(this).val();
+
+                return fetch('http://192.168.99.100:1111/models/' + brand_id)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.result) {
+                            renderModels(data.data);
+                        }
+                    })
+
+            })
+
+            function renderModels(models) {
+                $('#models option:not(:disabled)').remove();
+
+                var modelSelect = $('#models');
+                var options = '';
+
+                models.forEach(model => {
+                    options += '<option value="' + model.id + '">' + model.name + '</option>'
+                });
+
+                modelSelect.append(options);
+            }
+
+        })();
+
     });
 
     (function ($) {
@@ -514,8 +619,8 @@
 </script>
 
 
-<script src="catalog/view/javascript/main.js" type="text/javascript"></script>
-<script src="catalog/view/javascript/main_americaro.js"></script>
+<script src="https://www.americaro.com.ua/catalog/view/javascript/main.js" type="text/javascript"></script>
+<script src="https://www.americaro.com.ua/catalog/view/javascript/main_americaro.js"></script>
 
 </body>
 </html>

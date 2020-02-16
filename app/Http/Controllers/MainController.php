@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ArticleRepository;
+use App\Repositories\AutomobileRepository;
 use App\Repositories\BrandRepository;
 use App\Repositories\HelperRepository;
 use App\Repositories\ModelsRepository;
@@ -17,7 +18,8 @@ class mainController extends Controller
         ArticleRepository $articleRepository,
         NewRepository $newRepository,
         ReviewRepository $reviewRepository,
-        HelperRepository $helperRepository
+        HelperRepository $helperRepository,
+        AutomobileRepository $automobileRepository
     )
     {
         $brands = $brandRepository->all();
@@ -26,7 +28,9 @@ class mainController extends Controller
         $new = $newRepository->lastArticle();
         $review = $reviewRepository->lastArticle();
         $helper = $helperRepository->lastArticle();
+        $newAutomobiles = $automobileRepository->newAutomobiles();
 
-        return view('main', compact('brands', 'models', 'article', 'new', 'review', 'helper'));
+        return view('main',
+            compact('brands', 'models', 'article', 'new', 'review', 'helper', 'newAutomobiles'));
     }
 }

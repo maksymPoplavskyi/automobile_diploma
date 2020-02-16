@@ -422,287 +422,37 @@
             </div>
             <div id="carousel-example" class="carousel slide " data-ride="carousel">
                 <div class="carousel-inner row w-100  new__slider" role="listbox">
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35078"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX213/2679705f-e1d0-46ee-b50c-ed9125fb8a19.JPG"
-                                    alt="FORD F350 SUPER" title="FORD F350 SUPER" class="image new__image"></a>
-                            <span class="new__name">FORD F350 SUPER</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>156389 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1FT8W3BT0EEB78382</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
+                    @foreach($newAutomobiles as $newAutomobile)
+                        <div class="item carousel-item new__element">
+                            <div class="new__element--item">
+                                <a href="{{route('automobile', $newAutomobile->id)}}"><img
+                                        src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX235/8df21f14-cecd-48b8-abe4-e78461bbf50a.JPG"
+                                        alt="FORD F150 SUPER" title="FORD F150 SUPER" class="image new__image"></a>
+                                <span
+                                    class="new__name">{{$newAutomobile->model->brand->name}} {{$newAutomobile->model->name}}</span>
+                                <div class="row ">
+                                    <ul class="new__list col-4">
+                                        <li>Пробег:</li>
+                                        <li>Урон:</li>
+                                        <li>VIN:</li>
+                                    </ul>
+                                    <ul class="new__values col-8">
+                                        <li>{{$newAutomobile->mileage}}</li>
+                                        <li>{{$newAutomobile->damage->name}}</li>
+                                        <li>{{$newAutomobile->VIN}}</li>
+                                    </ul>
+                                </div>
+                                <p class=" new__rate new__rate--current">Текущая ставка:<span
+                                        class="new__rate--price">{{$newAutomobile->current_rate}} $</span>
+                                </p>
+                                <button class="btn new__rate new__rate--recommended">Осталось <span
+                                        class="new__rate--price"> < 1 ч.</span></button>
 
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35078"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35081"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX216/28d096aa-8365-440d-8ed0-12580dd6e2de.JPG"
-                                    alt="KIA FORTE EX" title="KIA FORTE EX" class="image new__image"></a>
-                            <span class="new__name">KIA FORTE EX</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>0 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>KNAFU4A20A5285032</li>
-                                </ul>
+                                <a href="{{route('automobile', $newAutomobile->id)}}"
+                                   class="new__more">Смотреть</a>
                             </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35081"
-                               class="new__more">Смотреть</a>
                         </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35083"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX214/4b31df17-4eb1-4771-a4e7-be988846aaf6.JPG"
-                                    alt="NISSAN SENTRA" title="NISSAN SENTRA" class="image new__image"></a>
-                            <span class="new__name">NISSAN SENTRA</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>24087 &#160;</li>
-                                    <li>REAR END&#160;</li>
-                                    <li>3N1AB7AP5HY226364</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35083"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35092"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX213/d82b372c-0b4c-4436-99ba-db336e77f1e5.JPG"
-                                    alt="TOYOTA PRIUS" title="TOYOTA PRIUS" class="image new__image"></a>
-                            <span class="new__name">TOYOTA PRIUS</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>183294 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>JTDKN3DU8A0084630</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35092"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35094"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX214/c849fc6a-7b6a-40ba-b9f0-2fdaf99543e7.JPG"
-                                    alt="CHEVROLET IMPALA LTZ" title="CHEVROLET IMPALA LTZ"
-                                    class="image new__image"></a>
-                            <span class="new__name">CHEVROLET IMPALA LTZ</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>129893 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>2G1WC5E39D1158244</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35094"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35103"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX215/10116412-8703-4f47-bd17-29c6b8dd7ea9.JPG"
-                                    alt="FORD EXPLORER X" title="FORD EXPLORER X" class="image new__image"></a>
-                            <span class="new__name">FORD EXPLORER X</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>102664 &#160;</li>
-                                    <li>REAR END&#160;</li>
-                                    <li>1FM5K7D82DGA98899</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35103"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=19498"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX164/18c3db7b-a948-45f9-85b7-8ae030083326.JPG"
-                                    alt="SUBARU OUTBACK 2." title="SUBARU OUTBACK 2." class="image new__image"></a>
-                            <span class="new__name">SUBARU OUTBACK 2.</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>113446 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>4S4BSANC2F3308169</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=19498"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35115"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX220/dd17244c-4cb1-4399-b495-0efb9b43e2bf.JPG"
-                                    alt="NISSAN ALTIMA BAS" title="NISSAN ALTIMA BAS" class="image new__image"></a>
-                            <span class="new__name">NISSAN ALTIMA BAS</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>0 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1N4AL2AP2CN502573</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35115"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35130"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX215/9a945df6-66ba-472a-a8fb-349526b31db6.JPG"
-                                    alt="BUICK LACROSSE C" title="BUICK LACROSSE C" class="image new__image"></a>
-                            <span class="new__name">BUICK LACROSSE C</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>75498 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>1G4GC5ED3BF253274</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35130"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="item carousel-item new__element">
-                        <div class="new__element--item">
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35137"><img
-                                    src="http://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX216/37edc3bb-45ff-46c9-b2c6-61a324abf023.JPG"
-                                    alt="LAND ROVER RANGE ROVE" title="LAND ROVER RANGE ROVE" class="image new__image"></a>
-                            <span class="new__name">LAND ROVER RANGE ROVE</span>
-                            <div class="row ">
-                                <ul class="new__list col-4">
-                                    <li>Пробег:</li>
-                                    <li>Урон:</li>
-                                    <li>VIN:</li>
-                                </ul>
-                                <ul class="new__values col-8">
-                                    <li>56820 &#160;</li>
-                                    <li>FRONT END&#160;</li>
-                                    <li>SALWR2VF2FA628260</li>
-                                </ul>
-                            </div>
-                            <p class=" new__rate new__rate--current">Текущая ставка:<span
-                                    class="new__rate--price"> 0$</span>
-                            </p>
-                            <button class="btn new__rate new__rate--recommended">Осталось <span
-                                    class="new__rate--price"> 23 ч.</span></button>
-
-                            <a href="https://www.americaro.com.ua/index.php?route=product/product&amp;product_id=35137"
-                               class="new__more">Смотреть</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <a class="right carousel-control carousel-control-prev new__prev" href="#carousel-example" role="button"
                    data-slide="prev">
