@@ -252,44 +252,45 @@
                                 </div>
                             </div>
                         </div>
+
                     @endforeach
 
-                    <div class="col-12 row">
-                        @if(count($automobiles) == 15)
-                            <nav aria-label="Page navigation example" class="col-4">
-                                <div class="form-group input-group input-group-xs text_limit">
-                                    <label class="input-group-addon" for="input-limit">Показать:</label>
-                                    <select id="input-limit" class="form-control" onchange="location = this.value;">
-                                        <option
-                                            value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=15"
-                                            selected="selected">15
-                                        </option>
-                                        <option
-                                            value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=25">
-                                            25
-                                        </option>
-                                        <option
-                                            value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=50">
-                                            50
-                                        </option>
-                                        <option
-                                            value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=75">
-                                            75
-                                        </option>
-                                        <option
-                                            value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=100">
-                                            100
-                                        </option>
-                                    </select>
-                                </div>
+                        <div class="col-12 row">
+                            @if(count($automobiles) > 15)
+                                <nav aria-label="Page navigation example" class="col-4">
+                                    <div class="form-group input-group input-group-xs text_limit">
+                                        <label class="input-group-addon" for="input-limit">Показать:</label>
+                                        <select id="input-limit" class="form-control" onchange="location = this.value;">
+                                            <option
+                                                value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=15"
+                                                selected="selected">15
+                                            </option>
+                                            <option
+                                                value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=25">
+                                                25
+                                            </option>
+                                            <option
+                                                value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=50">
+                                                50
+                                            </option>
+                                            <option
+                                                value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=75">
+                                                75
+                                            </option>
+                                            <option
+                                                value="https://www.americaro.com.ua/index.php?route=product/category&amp;path=28&amp;limit=100">
+                                                100
+                                            </option>
+                                        </select>
+                                    </div>
+                                </nav>
+                            @endif
+                            <nav aria-label="Page navigation example" class="col-8">
+                                <ul class="pagination">
+                                    {{$automobiles->links()}}
+                                </ul>
                             </nav>
-                        @endif
-                        <nav aria-label="Page navigation example" class="col-8">
-                            <ul class="pagination">
-                                {{$automobiles->links()}}
-                            </ul>
-                        </nav>
-                    </div>
+                        </div>
                 </div>
                 <div class="col-12 col-md-4 col-lg-4 ">
                     <div id="sidebar_right">

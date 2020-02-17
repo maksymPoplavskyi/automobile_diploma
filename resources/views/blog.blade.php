@@ -33,7 +33,7 @@
                                     class="image"/></a>
                         </div>
                         <div class="col-12 col-lg-7">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
+                                <span class="info__data"><img src="https://www.americaro.com.ua/image/brands/calendar.svg" alt="Calendar"
                                                               class="info__calendar">13.12.2019</span>
                             <span class="info__name">Как сэкономить, покупая авто в США?</span>
                             <p class="info__text">В Украине с каждым днём появляется все больше американских
@@ -42,7 +42,7 @@
                                 а
                                 то и 50% дешевле аналогичной модели в..</p>
                             <a href="https://www.americaro.com.ua/index.php?route=blog/article&amp;article_id=128"
-                               class="info__link">Читать далее <img src="/image/brands/logo/all-brands.svg"
+                               class="info__link">Читать далее <img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                                                     alt="All Brands"
                                                                     class="info__arrow"></a>
                         </div>
@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="col-12 col-lg-7">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
+                                <span class="info__data"><img src="https://www.americaro.com.ua/image/brands/calendar.svg" alt="Calendar"
                                                               class="info__calendar">13.12.2019</span>
                             <span class="info__name">Какие документы нужны для растаможки авто из США?</span>
                             <p class="info__text">Если вы решили приобрести автомобиль в Соединенных Штатах или Канаде,
@@ -65,7 +65,7 @@
                                 берём на
                                 себя работу с бумагами, чтобы вы ..</p>
                             <a href="https://www.americaro.com.ua/index.php?route=blog/article&amp;article_id=127"
-                               class="info__link">Читать далее <img src="/image/brands/logo/all-brands.svg"
+                               class="info__link">Читать далее <img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                                                     alt="All Brands"
                                                                     class="info__arrow"></a>
                         </div>
@@ -80,7 +80,7 @@
                                     class="image"/></a>
                         </div>
                         <div class="col-12 col-lg-7">
-                                <span class="info__data"><img src="/image/brands/calendar.svg" alt="Calendar"
+                                <span class="info__data"><img src="https://www.americaro.com.ua/image/brands/calendar.svg" alt="Calendar"
                                                               class="info__calendar">13.12.2019</span>
                             <span class="info__name">Как подобрать автомобиль из Америки?</span>
                             <p class="info__text">Самостоятельно приобрести автомобиль в Соединённых Штатах вполне
@@ -89,7 +89,7 @@
                                 повреждениями.
                                 Кроме того, сам поиск, оформление ..</p>
                             <a href="https://www.americaro.com.ua/index.php?route=blog/article&amp;article_id=126"
-                               class="info__link">Читать далее <img src="/image/brands/logo/all-brands.svg"
+                               class="info__link">Читать далее <img src="https://www.americaro.com.ua/image/brands/logo/all-brands.svg"
                                                                     alt="All Brands"
                                                                     class="info__arrow"></a>
                         </div>

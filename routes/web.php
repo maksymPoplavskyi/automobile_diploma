@@ -28,7 +28,7 @@ Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
 
 Route::get('/auction', [AuctionController::class, 'index'])->name('auction');
-Route::post('/auction/search', [AuctionController::class, 'search'])->name('auction.search');
+Route::match(['get', 'post'],'/auction/search', [AuctionController::class, 'search'])->name('auction.search');
 
 Route::get('/in-stock', [InStockController::class, 'index'])->name('in-stock');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
