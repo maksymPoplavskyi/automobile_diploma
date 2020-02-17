@@ -26,7 +26,7 @@
                         <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom text-white shadow-sm"
                               style="background:#000;">AMERICARO</span>
                             <div style="min-height:200px;">
-                                <img src="/catalog/view/theme/default/image/americaro/car222.png"
+                                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/car222.png"
                                      style="width: 100%;height: auto;text-align: center;max-height:200px;">
                             </div>
                             <div class="bg-transparent card-header pt-4 border-0">
@@ -50,7 +50,7 @@
                         <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom text-white shadow-sm"
                               style="background:#000;">AMERICARO</span>
                             <div style="min-height:200px;">
-                                <img src="/catalog/view/theme/default/image/americaro/car111.png"
+                                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/car111.png"
                                      style="width: 100%;height: auto;text-align: center;max-height:200px;">
                             </div>
                             <div class="bg-transparent card-header pt-4 border-0">
@@ -76,7 +76,7 @@
                         <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom text-white shadow-sm"
                               style="background:#000;">AMERICARO</span>
                             <div style="min-height:200px;">
-                                <img src="/catalog/view/theme/default/image/americaro/car333.png"
+                                <img src="https://www.americaro.com.ua/catalog/view/theme/default/image/americaro/car333.png"
                                      style="width: 100%;height: auto;text-align: center;max-height:200px;">
                             </div>
                             <div class="bg-transparent card-header pt-4 border-0">

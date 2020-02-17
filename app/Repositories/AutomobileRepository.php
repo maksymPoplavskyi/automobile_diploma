@@ -23,4 +23,14 @@ class AutomobileRepository extends BaseRepository
     {
         return $this->model->where('created_at', '>', Carbon::now()->subHour())->get();
     }
+
+    public function searchAutomobiles()
+    {
+        return $this->model->select('automobiles.*');
+    }
+
+    public function paginate()
+    {
+        return $this->model->paginate(15);
+    }
 }
