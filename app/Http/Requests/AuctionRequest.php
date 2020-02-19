@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MainSearchRequest extends FormRequest
+class AuctionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,23 +24,23 @@ class MainSearchRequest extends FormRequest
     public function rules()
     {
         return [
-            'brand_id' => '',
-            'model_id' => '',
+            'brands' => '',
+            'fuels' => '',
             'years' => ''
         ];
     }
 
     public function getBrand()
     {
-        return $this->get('brand_id');
+        return $this->get('brands');
     }
 
-    public function getModel()
+    public function getFuel()
     {
-        return $this->get('model_id');
+        return $this->get('fuels');
     }
 
-    public function getYears()
+    public function getYear()
     {
         return $this->get('years');
     }

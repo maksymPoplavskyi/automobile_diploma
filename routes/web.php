@@ -27,8 +27,11 @@ Route::get('/', [mainController::class, 'index'])->name('main');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
 
-Route::get('/auction', [AuctionController::class, 'index'])->name('auction');
-Route::match(['get', 'post'],'/auction/search', [AuctionController::class, 'search'])->name('auction.search');
+Route::prefix('/auction')->group(function () {
+    Route::get('', [AuctionController::class, 'index'])->name('auction');
+    Route::post('/search', [AuctionController::class, 'searchFromMain'])->name('main.search');
+    Route::get('/search', [AuctionController::class, 'searchFromAuc'])->name('auction.search');
+});
 
 Route::get('/in-stock', [InStockController::class, 'index'])->name('in-stock');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
