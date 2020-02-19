@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuctionRequest;
 use App\Http\Requests\MainSearchRequest;
 use App\Repositories\AutomobileRepository;
 use App\Repositories\BrandRepository;
 use App\Repositories\FuelRepository;
 use App\Services\AuctionService;
-use Illuminate\Http\Request;
 
 class AuctionController extends Controller
 {
@@ -20,9 +20,19 @@ class AuctionController extends Controller
         return view('auction', compact('automobiles', 'brands', 'fuels'));
     }
 
-    public function search(MainSearchRequest $request, AuctionService $service)
+    public function searchFromMain(MainSearchRequest $request, AuctionService $service)
     {
-        $automobiles = $service->searchAction($request);
+        $automobiles = $service->mainSearchAction($request);
+
+        $brands = app(BrandRepository::class)->all();
+        $fuels = app(FuelRepository::class)->all();
+
+        return view('search', compact('automobiles', 'brands', 'fuels'));
+    }
+
+    public function searchFromAuc(AuctionRequest $request, AuctionService $service)
+    {
+        $automobiles = $service->auctionSearchAction($request);
 
         $brands = app(BrandRepository::class)->all();
         $fuels = app(FuelRepository::class)->all();

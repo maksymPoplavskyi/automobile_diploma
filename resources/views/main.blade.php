@@ -13,7 +13,7 @@
                     <h1 class="title_home_header">АВТО ИЗ США ПОД КЛЮЧ С ЭКОНОМИЕЙ ДО 50%</h1>
                 </div>
                 <div class="col-12 col-sm-6">
-                    <form id="main_page_search" method="post" action="{{route('auction.search')}}" class="auction">
+                    <form id="main_page_search" method="post" action="{{route('main.search')}}" class="auction">
                         @csrf
 {{--                        <input type="hidden" name="route" value="extension/filter">--}}
 {{--                        <input type="hidden" name="module_id" value="36">--}}
@@ -242,7 +242,6 @@
 
         </div>
 
-        </div>
     </section>
     <script>
 

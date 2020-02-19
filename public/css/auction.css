@@ -1,0 +1,305 @@
+
+#filter-module-toggle {
+    display: none;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 5px;
+    cursor: pointer;
+    outline: none !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+}
+
+.filter-module {
+    margin-bottom: 20px;
+    margin-top: -20px;
+    z-index: 99999;
+}
+
+.filter-module {
+    border-top: 1px solid #DDD;
+    padding: 20px 10px;
+    text-transform: uppercase;
+}
+
+.filter-module h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.filter-module .clear-link {
+    float: right;
+    font-size: 28px;
+    position: relative;
+    left: -5px;
+    top: 3.9px;
+    color: #444444;
+    display: none;
+}
+
+.filter-module .clear-link:hover {
+    color: #FFC001;
+}
+
+.filter-module .hide-button {
+    display: none;
+    float: right;
+}
+
+.filter-module .collapsable-heading {
+    cursor: pointer;
+    padding: 15px 0 15px 0px;
+    width: 100%;
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+    border-top: 0px solid #bbb;
+    box-shadow: none;
+    margin-top: 0;
+    font-weight: 700;
+
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+.filter-module .collapsable-choices {
+    background: #FFF;
+    text-align: left;
+}
+
+.filter-module .collapsable-choices img {
+    vertical-align: middle;
+}
+
+.filter-module > div > div.collapsable-choices {
+    border: 1px solid #DDD;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    overflow: auto;
+    max-height: 250px;
+}
+
+@media (max-width: 767px) {
+    .filter-module > div > div.collapsable-choices {
+        max-height: none;
+    }
+}
+
+.filter-module > div:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: right;
+    margin: -25px 20px 0 0;
+}
+
+.filter-module input {
+    margin-right: 2px;
+}
+
+.filter-module a,
+.filter-module input[type="checkbox"],
+.filter-module input[type="radio"],
+.filter-module label {
+    cursor: pointer;
+}
+
+.filter-module a.choice {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+}
+
+.filter-module a.choice:hover {
+    color: initial;
+}
+
+.filter-module input[type="text"] {
+    margin-bottom: 10px;
+}
+
+.filter-module label {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    font-size: 10px;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.filter-module select {
+    display: inline-block;
+    margin: 5px 0;
+    max-width: 250px;
+    width: 100%;
+}
+
+.filter-module .clear-filters {
+    text-align: left;
+    margin: 20px 0 0 0px;
+}
+
+.filter-module .clear-filters a {
+    font-size: 11px;
+}
+
+.filter-module .filter-button {
+    text-align: right;
+    margin: -25px 0 0 0;
+}
+
+.filter-module .footer__button {
+    color: #fff !important;
+}
+
+@media (max-width: 992px) {
+    .filter-module .clear-filters {
+        text-align: center;
+        margin: 20px 0 0 0px;
+    }
+
+    .filter-module .filter-button {
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
+}
+
+
+.filter-module .flexible-filter {
+    padding: 10px 0 0;
+    text-align: center;
+}
+
+.filter-module .flexible-filter input {
+    display: inline-block;
+    width: 30%;
+}
+
+#price-slider-36 {
+    margin: 40px auto 10px;
+    width: 85%;
+}
+
+.noUi-handle {
+    cursor: pointer;
+    outline: none;
+}
+
+.collapsable-block .down-triangle {
+    padding: 0;
+    position: relative;
+    top: 5px;
+    color: #FFC001;
+    font-size: 30px;
+    display: none;
+}
+
+.collapsable-block .right-triangle {
+    padding: 0;
+    position: relative;
+    top: 5px;
+    color: #FFC001;
+    font-size: 30px;
+    display: none;
+}
+
+/* Content Top/Bottom Fixes */
+#content .filter-module {
+    border: 1px solid #DDD;
+}
+
+#content .filter-module div:first-child {
+    border-bottom: 1px solid #DDD;
+}
+
+#content .filter-module div {
+    border: none;
+}
+
+#content .filter-module .collapsable-heading {
+    border: 1px solid #DDD;
+}
+
+#content .filter-module .collapsable-block {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+    width: 19%;
+}
+
+#content .filter-module .clear-filters {
+    position: relative;
+    left: 30%;
+    top: 25px;
+    height: 0;
+    width: 100px;
+}
+
+.filter-module input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.filter-module .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+}
+
+.filter-module .checkbox:checked + .checkmark::before,
+.manufacturer-filter .checkbox:checked + .checkmark::before,
+.price-filter .checkbox:checked + .checkmark::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    bottom: 5px;
+    left: 2px;
+    border-radius: 0px;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+/* Mobile Devices Styling */
+@media (max-width: 767px) {
+    #filter-module-toggle, .filter-module .hide-button {
+        display: block;
+    }
+
+    .filter-module {
+        display: none;
+        box-shadow: 0 2px 5px #888;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding-bottom: 20px;
+    }
+
+    .filter-module .collapsable-block:not(.category-filter) label {
+        display: inline-block;
+    }
+
+    .filter-module .collapsable-heading {
+        margin-top: 0px;
+
+    }
+}

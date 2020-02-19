@@ -30,7 +30,7 @@
                             <div class="bg_404"></div>
                             <p class="text-error">Нет товаров, которые соответствуют критериям поиска.</p>
                             <div class="buttons clearfix">
-                                <div class=""><a href="{{route('main')}}" class="btn btn-primary">Продолжить</a></div>
+                                <div class=""><a href="{{route('main')}}" class="btn btn-primary">Вернуться на главную</a></div>
                             </div>
                         </div>
                     @endif
@@ -602,136 +602,108 @@
 
                                 /* Additional CSS */
                             </style>
-                            <div id="filter-module-36" class="filter-module desktop">
-                                <div class="manufacturer-filter collapsable-block">
-                                    <div class="collapsable-heading">
-                                        <span class="right-triangle" style="display: none">&#9656;</span>
-                                        <span class="down-triangle">&#9662;</span>
-                                        Марка <a class="clear-link" onclick="clearFilters($(this).parent().parent())">
-                                            × </a>
-                                    </div>
-                                    <div class="collapsable-choices">
+                            <form action="{{route('auction.search')}}" metod="post">
+                                <div id="filter-module-36" class="filter-module desktop">
+                                    <div class="manufacturer-filter collapsable-block">
+                                        <div class="collapsable-heading">
+                                            <span class="right-triangle" style="display: none">&#9656;</span>
+                                            <span class="down-triangle">&#9662;</span>
+                                            Марка <a class="clear-link"
+                                                     onclick="clearFilters($(this).parent().parent())">
+                                                × </a>
+                                        </div>
+                                        <div class="collapsable-choices">
+                                            @foreach($brands as $brand)
+                                                <label>
+                                                    <input class="checkbox" type="checkbox" name="brands[]"
+                                                           value="{{$brand->id}}"/><span
+                                                        class="checkmark"></span> {{$brand->name}} </label>
+                                            @endforeach
 
-                                        @foreach($brands as $brand)
-                                            <label>
-                                                <input class="checkbox" type="checkbox" name="manufacturer_id"
-                                                       value="{{$brand->id}}"/><span
-                                                    class="checkmark"></span> {{$brand->name}} </label>
-                                        @endforeach
+                                        </div>
+                                    </div>
 
-                                    </div>
-                                    <div class="clear-filters hidden-xs hidden-sm"><a
-                                            onclick="clearAllFilters($(this))">Очистить</a></div>
-
-                                    <div class="filter-button hidden-xs hidden-sm">
-                                        <a class="btn  button footer__button">Подобрать</a>
-                                    </div>
-                                </div>
-
-                                <div class="attribute-filter collapsable-block">
-                                    <div class="collapsable-heading">
-                                        <span class="right-triangle" style="display: none">&#9656;</span>
-                                        <span class="down-triangle">&#9662;</span>
-                                        Модель <a class="clear-link"
-                                                  onclick="clearFilters($(this).parent().parent())">×</a>
-                                    </div>
-                                    <div class="collapsable-choices">
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="model_id"
-                                                   value="--"/><span class="checkmark"></span> 0 </label>
-                                    </div>
-                                    <div class="clear-filters hidden-xs"><a
-                                            onclick="clearAllFilters($(this))">Очистить</a></div>
-
-                                    <div class="filter-button hidden-xs">
-                                        <a class="btn  button footer__button">Подобрать</a>
-                                    </div>
-                                </div>
-                                <div class="attribute-filter collapsable-block">
-                                    <div class="collapsable-heading">
-                                        <span class="right-triangle" style="display: none">&#9656;</span>
-                                        <span class="down-triangle">&#9662;</span>
-                                        Топливо <a class="clear-link" onclick="clearFilters($(this).parent().parent())">×</a>
-                                    </div>
-                                    <div class="collapsable-choices">
-
-                                        @foreach($fuels as $fuel)
-                                            <label>
-                                                <input class="checkbox" type="checkbox" name="fuel_id"
-                                                       value="HYBRID ENGINE"/><span class="checkmark"></span>
-                                                {{$fuel->name}}
-                                            </label>
-                                        @endforeach
-
-                                    </div>
-                                    <div class="clear-filters hidden-xs"><a
-                                            onclick="clearAllFilters($(this))">Очистить</a></div>
-                                    <div class="filter-button hidden-xs">
-                                        <a class="btn  button footer__button">Подобрать</a>
-                                    </div>
-                                </div>
-                                <div class="attribute-filter collapsable-block">
-                                    <div class="collapsable-heading">
-                                        <span class="right-triangle" style="display: none">&#9656;</span>
-                                        <span class="down-triangle">&#9662;</span>
-                                        Год выпуска <a class="clear-link"
+                                    <div class="attribute-filter collapsable-block">
+                                        <div class="collapsable-heading">
+                                            <span class="right-triangle" style="display: none">&#9656;</span>
+                                            <span class="down-triangle">&#9662;</span>
+                                            Топливо <a class="clear-link"
                                                        onclick="clearFilters($(this).parent().parent())">×</a>
+                                        </div>
+                                        <div class="collapsable-choices">
+
+                                            @foreach($fuels as $fuel)
+                                                <label>
+                                                    <input class="checkbox" type="checkbox" name="fuels[]"
+                                                           value="{{$fuel->id}}"/><span class="checkmark"></span>
+                                                    {{$fuel->name}}
+                                                </label>
+                                            @endforeach
+
+                                        </div>
                                     </div>
-                                    <div class="collapsable-choices">
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2020"/><span class="checkmark"></span> 2020 </label>
+                                    <div class="attribute-filter collapsable-block">
+                                        <div class="collapsable-heading" style="margin-top: 25px">
+                                            <span class="right-triangle" style="display: none">&#9656;</span>
+                                            <span class="down-triangle">&#9662;</span>
+                                            Год выпуска <a class="clear-link"
+                                                           onclick="clearFilters($(this).parent().parent())">×</a>
+                                        </div>
+                                        <div class="collapsable-choices" style="margin-right: -20px; text-align: left">
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2020"/><span class="checkmark"></span> 2020 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2019"/><span class="checkmark"></span> 2019 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2019"/><span class="checkmark"></span> 2019 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2018"/><span class="checkmark"></span> 2018 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2018"/><span class="checkmark"></span> 2018 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2017"/><span class="checkmark"></span> 2017 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2017"/><span class="checkmark"></span> 2017 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2016"/><span class="checkmark"></span> 2016 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2016"/><span class="checkmark"></span> 2016 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2015"/><span class="checkmark"></span> 2015 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2015"/><span class="checkmark"></span> 2015 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2014"/><span class="checkmark"></span> 2014 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2014"/><span class="checkmark"></span> 2014 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2013"/><span class="checkmark"></span> 2013 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2013"/><span class="checkmark"></span> 2013 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2012"/><span class="checkmark"></span> 2012 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2012"/><span class="checkmark"></span> 2012 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2011"/><span class="checkmark"></span> 2011 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2011"/><span class="checkmark"></span> 2011 </label>
 
-                                        <label>
-                                            <input class="checkbox" type="checkbox" name="attribute[27]"
-                                                   value="2010"/><span class="checkmark"></span> 2010 </label>
+                                            <label>
+                                                <input class="checkbox" type="checkbox" name="years[]"
+                                                       value="2010"/><span class="checkmark"></span> 2010 </label>
 
-                                    </div>
-                                    <div class="clear-filters hidden-xs"><a
-                                            onclick="clearAllFilters($(this))">Очистить</a></div>
+                                        </div>
+                                        <div class="clear-filters hidden-xs"><a
+                                                onclick="clearAllFilters($(this))">Очистить</a></div>
 
-                                    <div class="filter-button hidden-xs">
-                                        <a class="btn  button footer__button">Подобрать</a>
+                                        <div class="filter-button hidden-xs hidden-sm">
+                                            <input type="submit" class="btn  button footer__button" value="Подобрать">
+                                        </div>
                                     </div>
                                 </div>
-                                <input type="hidden" class="form-control" name="category_id" value="28"/>
-                            </div>
+                            </form>
 
                             <script>
                                 function clearAllFilters(element) {
