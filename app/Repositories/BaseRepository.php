@@ -32,4 +32,19 @@ abstract class BaseRepository
             ->limit(1)
             ->first();
     }
+
+    public function insert($attributes)
+    {
+        return $this->model->insert($attributes);
+    }
+
+    public function insertGetId($attributes)
+    {
+        return $this->model->insertGetId($attributes);
+    }
+
+    public function whereName($attribute)
+    {
+        return $this->model->whereName($attribute)->first();
+    }
 }

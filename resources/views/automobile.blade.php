@@ -118,7 +118,7 @@
                         <tr>
                             <td class="product__table--name">Двигатель</td>
                             <td class="product__table--value">
-                                {{$automobile->additional->engine}} {{$automobile->additional->count_of_cylinders}}
+                                {{$automobile->additional->engine}}
                             </td>
                         </tr>
 

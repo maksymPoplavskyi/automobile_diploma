@@ -16,7 +16,10 @@ class DriverUnitTableSeeder extends Seeder
             ['name' => 'front-wheel drive'],
             ['name' => 'rear drive'],
             ['name' => 'four-wheel drive'],
-            ['name' => 'hybrid Synergetic Drive']
+            ['name' => 'hybrid Synergetic Drive'],
+            ['name' => 'rear-wheel drive'],
+            ['name' => 'all wheel drive'],
+            ['name' => '4x4 w/Front Whl Drv']
         ]);
     }
 }

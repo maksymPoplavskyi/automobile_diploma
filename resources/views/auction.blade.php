@@ -30,7 +30,8 @@
                             <div class="bg_404"></div>
                             <p class="text-error">Нет товаров, которые соответствуют критериям поиска.</p>
                             <div class="buttons clearfix">
-                                <div class=""><a href="{{route('main')}}" class="btn btn-primary">Вернуться на главную</a></div>
+                                <div class=""><a href="{{route('main')}}" class="btn btn-primary">Вернуться на
+                                        главную</a></div>
                             </div>
                         </div>
                     @endif
