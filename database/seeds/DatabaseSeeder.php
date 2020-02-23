@@ -19,24 +19,24 @@ class DatabaseSeeder extends Seeder
 
         $this->call(HelperTableSeeder::class);
 
-        $this->call(BrandTableSeeder::class);
+//        $this->call(BrandTableSeeder::class);
 
         $this->call(DamageTableSeeder::class);
 
         $this->call(TransmissionTableSeeder::class);
 
-        $this->call(LocationTableSeeder::class);
+//        $this->call(LocationTableSeeder::class);
 
         $this->call(FuelTableSeeder::class);
 
         $this->call(DriverUnitTableSeeder::class);
 
-        $this->call(AdditionalTableSeeder::class);
+//        $this->call(AdditionalTableSeeder::class);
 
-        $this->call(ModelTableSeeder::class);
+//        $this->call(ModelTableSeeder::class);
 
-        $this->call(AutomobileTableSeeder::class);
+//        $this->call(AutomobileTableSeeder::class);
 
-        $this->call(ImageTableSeeder::class);
+//        $this->call(ImageTableSeeder::class);
     }
 }

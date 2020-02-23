@@ -18,23 +18,18 @@ class CreateAutomobilesTable extends Migration
             $table->unsignedSmallInteger('model_id');
             $table->unsignedSmallInteger('year');
             $table->unsignedMediumInteger('mileage');
-            $table->unsignedBigInteger('location_id');
+            $table->string('location', 60);
             $table->unsignedTinyInteger('damage_id');
             $table->unsignedInteger('current_rate');
             $table->unsignedTinyInteger('transmission_id');
             $table->unsignedBigInteger('additional_id');
             $table->uuid('VIN');
-            $table->integer('status');
+            $table->date('status');
             $table->timestamps();
 
             $table->foreign('model_id')
                 ->references('id')
                 ->on('models')
-                ->onDelete('cascade');
-
-            $table->foreign('location_id')
-                ->references('id')
-                ->on('locations')
                 ->onDelete('cascade');
 
             $table->foreign('damage_id')

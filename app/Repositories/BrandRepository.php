@@ -12,4 +12,9 @@ class BrandRepository extends BaseRepository
     {
         return Brand::getModel();
     }
+
+    public function getId()
+    {
+        return $this->model->select('brands.id')->get();
+    }
 }
